@@ -1,0 +1,21 @@
+<!-- this tells django to laod static templates tags in django.contrib.staticfiles
+    making it possible to use {static%}template tag to inclulde static files like blog.css etc  throughout project -->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        <h2>My blog</h2>
+        <p>Welcome to my blog.</p>
+    </div>
+</body>
+</html>
